@@ -1,0 +1,19 @@
+{
+  "name": "sarine.viewer.templates.resources",
+  "version": "1.0.0",
+  "description": "common resources for viewer templates",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SarineTechnologies/sarine.viewer.templates.resources.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SarineTechnologies/sarine.viewer.templates.resources/issues"
+  },
+  "homepage": "https://github.com/SarineTechnologies/sarine.viewer.templates.resources"
+}
