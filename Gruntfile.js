@@ -8,6 +8,7 @@ module.exports = function (grunt) {
         dir: 'dist',
         fsTargetDir: '',
         fsSourceDir: '',
+        fsResourceDir: '',
         codeWidgetPath: './'
     };
 
@@ -15,6 +16,14 @@ module.exports = function (grunt) {
         project: appConfig,
         version: {},
         copy: {
+            dist_resources: {
+                flatten: true,
+                src: [
+                    '<%= project.fsResourceDir %>/en-US/*.json'
+                ],
+                dest: '<%= project.fsTargetDir %>/resources/en-US/',
+                expand: true
+            },
             dist_js: {
                 flatten: true,
                 src: [
@@ -101,6 +110,7 @@ module.exports = function (grunt) {
     grunt.registerTask('build', 'Build widget for production', function () {
         appConfig.fsSourceDir = 'app/js';
         appConfig.fsTargetDir = 'app/dist';
+        appConfig.fsResourceDir = 'app/resources';
         fullConfig.version = grunt.file.readJSON(__dirname  + '/package.json');
         appConfig.version = fullConfig.version;
 
@@ -113,6 +123,7 @@ module.exports = function (grunt) {
             {task: 'copy:dist_package_file',     exec: 1},
             {task: 'copy:dist_assets1',     exec: 1},
             {task: 'copy:dist_assets2',     exec: 1},
+            {task: 'copy:dist_resources',     exec: 1},
             {task: 'clean',                 exec: 1},
             {task: 'appcache',              exec: 1},
         ]);

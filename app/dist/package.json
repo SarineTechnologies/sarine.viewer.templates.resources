@@ -38,5 +38,8 @@
   "bugs": {
     "url": "https://github.com/SarineTechnologies/sarine.viewer.templates.resources/issues"
   },
-  "homepage": "https://github.com/SarineTechnologies/sarine.viewer.templates.resources"
+  "homepage": "https://github.com/SarineTechnologies/sarine.viewer.templates.resources",
+  "scripts": {
+    "build": "npm install && grunt build"
+  }
 }
