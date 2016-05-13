@@ -60,8 +60,6 @@
   "slide.inscription.title": "ID Inscription",
   "slide.report.text": "Click the image to view the report",
   "slide.report.title.text": "Report",
-  "slide.light.reportId.title": "Report ID: ",
-  "slide.light.issueDate.title": "Issue Date: ",
   "slide.light.text1": "Total Grade",
   "slide.light.text2": "Exceptional",
   "slide.light.text3": "Very High",
@@ -179,5 +177,7 @@
   "slide.light.horizontal.text7": "Excellent",
   "slide.light.horizontal.specs.title": "Light Analysis",
   "slide.certificate": "Certificate #:",
-  "slide.gradedBy": "Graded By:"
+  "slide.gradedBy": "Graded By:",
+  "slide.reportId": "Report ID: ",
+  "slide.issueDate": "Issue Date: ",
 }
