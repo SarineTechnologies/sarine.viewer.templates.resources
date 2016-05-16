@@ -163,6 +163,8 @@
   "dashboard.properties.laboratory.title": "",
   "dashboard.properties.certSerialNumber.title": "",
   "dashboard.properties.comment.title": "",
+  "dashboard.properties.certificate.title": "Certificate #",
+  "dashboard.properties.gradedBy.title": "Graded By",
   "dashboard.properties.provided.text": "information provided by 3<sup>rd</sup> party",
   "dashboard.contactus.title": "Contact Us",
   "slide.real.title": "Real View",
@@ -182,5 +184,7 @@
   "slide.certificate": "Certificate #:",
   "slide.gradedBy": "Graded By:",
   "slide.reportId": "Report ID:",
-  "slide.issueDate": "Issue Date:"
+  "slide.issueDate": "Issue Date:",
+  "slide.light.reportId.title": "Report ID:",
+  "slide.light.issueDate.title": "Issue Date:"
 }
