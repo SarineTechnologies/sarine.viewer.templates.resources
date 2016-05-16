@@ -163,6 +163,8 @@
   "dashboard.properties.laboratory.title": "",
   "dashboard.properties.certSerialNumber.title": "",
   "dashboard.properties.comment.title": "",
+  "dashboard.properties.certificate.title": "Certificate #",
+  "dashboard.properties.gradedBy.title": "Graded By",
   "dashboard.properties.provided.text": "information provided by 3<sup>rd</sup> party",
   "dashboard.contactus.title": "Contact Us",
   "slide.real.title": "Real View",
