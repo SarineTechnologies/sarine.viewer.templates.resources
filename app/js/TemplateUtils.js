@@ -23,6 +23,12 @@
 			console.log.apply(window.console, arguments);
 		}
 	}
+
+	function devError() {
+		if (isDev) {
+			console.error.apply(window.console, arguments);
+		}
+	}
 	
 
 	function loadComponents() {
@@ -280,6 +286,7 @@
 		recurse: recurse,
 		isDev: isDev,
 		devLog: devLog,
+		devError: devError,
 		fire: fire,
 		debounce: debounce,
 		processUrl: processUrl,
