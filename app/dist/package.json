@@ -1,7 +1,7 @@
 {
   "name": "sarine.viewer.templates.resources",
   "title": "common resources for viewer templates",
-  "version": "1.7.0",
+  "version": "1.9.0",
   "description": "common resources for viewer templates",
   "main": "index.js",
   "scripts": {
@@ -39,7 +39,7 @@
     "url": "https://github.com/SarineTechnologies/sarine.viewer.templates.resources/issues"
   },
   "scripts": {
-    "publish": "grunt push:minor"
+    "publish": "grunt build && grunt push:minor"
   },
   "homepage": "https://github.com/SarineTechnologies/sarine.viewer.templates.resources"
 }
