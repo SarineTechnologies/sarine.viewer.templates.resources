@@ -19,6 +19,12 @@
 			console.error.apply(window.console, arguments);
 		}
 	}
+
+	function devWarn() {
+		if (isDev) {
+			console.warn.apply(window.console, arguments);
+		}
+	}
 	
 
 	function loadComponents() {
@@ -275,6 +281,7 @@
 		isDev: isDev,
 		devLog: devLog,
 		devError: devError,
+		devWarn: devWarn,
 		fire: fire,
 		debounce: debounce,
 		processUrl: processUrl,
