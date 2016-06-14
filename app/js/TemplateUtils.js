@@ -176,7 +176,7 @@
 		var eventName = eventName || 'readyCss';
         var ref;
         if (before) {
-            ref = Array.isArray(before) ? before[0] : before;
+            ref = before.length && before.length > 0 ? before[0] : before;
         } else {
             var refs = (document.body || document.getElementsByTagName("head")[0]).childNodes;
             ref = refs[refs.length - 1];
