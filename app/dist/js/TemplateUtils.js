@@ -166,13 +166,14 @@
 	// [c]2015 @scottjehl, Filament Group, Inc.
 	// Licensed MIT
 
-	function loadCSS(href, before, media) {
+	function loadCSS(href, before, media, eventName) {
         // Arguments explained:
         // `href` [REQUIRED] is the URL for your CSS file.
         // `before` [OPTIONAL] is the element the script should use as a reference for injecting our stylesheet <link> before
         // By default, loadCSS attempts to inject the link after the last stylesheet or script in the DOM. However, you might desire a more specific location in your document.
         // `media` [OPTIONAL] is the media type or query of the stylesheet. By default it will be 'all'
         var ss = document.createElement("link");
+		var eventName = eventName || 'readyCss';
         var ref;
         if (before) {
             ref = before;
@@ -206,7 +207,7 @@
         ss.onloadcssdefined = onloadcssdefined;
         onloadcssdefined(function() {
             ss.media = media || "all";
-            $(document).trigger('readyCss');
+            $(document).trigger(eventName);
         });
         return ss;
     };
