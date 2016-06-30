@@ -41,6 +41,9 @@
       (this.modal.offsetHeight > window.innerHeight ?
         " w-modal-open w-modal-anchored" : " w-modal-open");
     this.overlay.className = this.overlay.className + " w-modal-open";
+
+    // for normalize slider item with
+    $('.summary__stories').slick('setPosition');
   };
 
   ModalPlugin.prototype.close = function() {
