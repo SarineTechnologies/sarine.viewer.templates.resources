@@ -3,6 +3,7 @@
   "title": "common resources for viewer templates",
 <<<<<<< refs/remotes/origin/common-texts
 <<<<<<< refs/remotes/origin/common-texts
+<<<<<<< refs/remotes/origin/common-texts
   "version": "1.20.0",
 =======
   "version": "1.16.0",
@@ -10,6 +11,9 @@
 =======
   "version": "1.21.0",
 >>>>>>> Release v1.21.0
+=======
+  "version": "1.22.0",
+>>>>>>> Release v1.22.0
   "description": "common resources for viewer templates",
   "main": "index.js",
   "scripts": {
