@@ -5,7 +5,7 @@
         var buttons = $('.share-container > span'),
             stone = window.stones && window.stones[0],
             config = {
-                sarineId: stone.friendlyName,
+                sarineId: report ? report.friendlyName : stone.friendlyName,
                 slogan: 'Check out this beautiful Diamond',
                 shareTitle: null,
                 shareBody: null,
