@@ -1,7 +1,11 @@
 {
   "name": "sarine.viewer.templates.resources",
   "title": "common resources for viewer templates",
+<<<<<<< refs/remotes/origin/common-texts
   "version": "1.20.0",
+=======
+  "version": "1.16.0",
+>>>>>>> Release v1.16.0
   "description": "common resources for viewer templates",
   "main": "index.js",
   "scripts": {
