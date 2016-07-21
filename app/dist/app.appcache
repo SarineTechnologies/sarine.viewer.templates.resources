@@ -5,6 +5,7 @@ CACHE MANIFEST
 <<<<<<< refs/remotes/origin/common-texts
 <<<<<<< refs/remotes/origin/common-texts
 <<<<<<< refs/remotes/origin/common-texts
+<<<<<<< refs/remotes/origin/common-texts
 # rev 36 - 2016-07-06T13:27:26.052Z
 =======
 # rev 26 - 2016-07-13T13:29:33.173Z
@@ -24,6 +25,9 @@ CACHE MANIFEST
 =======
 # rev 41 - 2016-07-20T10:46:45.950Z
 >>>>>>> Build resources with new files for new dash
+=======
+# rev 41 - 2016-07-21T08:01:55.820Z
+>>>>>>> Build resource for #841
 
 CACHE:
 img/bg-brilliance.png
