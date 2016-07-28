@@ -28,6 +28,26 @@
         this.pages = pages;
     }
 
+    ViewerList.prototype.getPageCode = function (page) {
+        if (page.page) return _pageCodes[page.atom + '_' + page.page];
+
+        return _pageCodes[page.atom];
+    };
+
+    ViewerList.prototype.getPageList = function () {
+        return this.pages;
+    };
+
+    ViewerList.prototype.getPageNames = function () {
+        return this.pages.map(function (item) {
+            return this.getPageCode(item.atom);
+        });
+    };
+
+    ViewerList.prototype.filter = function () {
+        this.pages = this.pages.filter(_isShouldBeAdded);
+    };
+
     ViewerList.prototype.enablePages = function () {
         var tmpContainer = $('<div/>'),
             pagesContainer = $('.slide-wrap');
@@ -44,26 +64,6 @@
 
             slide.appendTo(pagesContainer);
         }
-    };
-
-    ViewerList.prototype.getPageList = function () {
-        return this.pages;
-    };
-
-    ViewerList.prototype.getPageNames = function () {
-        return this.pages.map(function (item) {
-            return this.getPageCode(item.atom);
-        });
-    };
-
-    ViewerList.prototype.getPageCode = function (page) {
-        if (page.page) return _pageCodes[page.atom + '_' + page.page];
-
-        return _pageCodes[page.atom];
-    };
-
-    ViewerList.prototype.filter = function () {
-        this.pages = this.pages.filter(_isShouldBeAdded);
     };
 
     function _isShouldBeAdded(page) {
