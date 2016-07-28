@@ -70,7 +70,7 @@
         tmpContainer.remove();
 
         function enablePage(page) {
-            var pageCode = _getPageCode(page);
+            var pageCode = getPageCode(page);
             var slide = tmpContainer.find('[data-anchor=' + pageCode + ']');
 
             slide.appendTo(pagesContainer);
@@ -78,7 +78,7 @@
     }
 
     function _isShouldBeAdded(page) {
-        var pageCode = _getPageCode(page);
+        var pageCode = getPageCode(page);
         var templateVersion = page.templateVersion || '1';
 
         if (page.atom == 'youtube' || page.atom == 'aboutUs') {
