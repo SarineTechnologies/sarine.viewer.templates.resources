@@ -28,11 +28,7 @@
         this.pages = pages;
     }
 
-    ViewerList.prototype.getPageCode = function (page) {
-        if (page.page) return _pageCodes[page.atom + '_' + page.page];
-
-        return _pageCodes[page.atom];
-    };
+    ViewerList.prototype.getPageCode = _getPageCode;
 
     ViewerList.prototype.getPageList = function () {
         return this.pages;
@@ -40,7 +36,7 @@
 
     ViewerList.prototype.getPageNames = function () {
         return this.pages.map(function (item) {
-            return this.getPageCode(item.atom);
+            return _getPageCode(item.atom);
         });
     };
 
@@ -59,7 +55,7 @@
         tmpContainer.remove();
 
         function enablePage(page) {
-            var pageCode = this.getPageCode(page);
+            var pageCode = _getPageCode(page);
             var slide = tmpContainer.find('[data-anchor=' + pageCode + ']');
 
             slide.appendTo(pagesContainer);
@@ -67,7 +63,7 @@
     };
 
     function _isShouldBeAdded(page) {
-        var pageCode = this.getPageCode(page);
+        var pageCode = _getPageCode(page);
         var templateVersion = page.templateVersion || '1';
 
         if (page.atom == 'youtube' || page.atom == 'aboutUs') {
@@ -113,6 +109,12 @@
         for (i = 0; i < cpl; i++) {
             iterator(pages[i], i);
         }
+    }
+
+    function _getPageCode() {
+        if (page.page) return _pageCodes[page.atom + '_' + page.page];
+
+        return _pageCodes[page.atom];
     }
 
     window.ViewerList = ViewerList;
