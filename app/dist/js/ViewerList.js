@@ -1,4 +1,6 @@
 (function (window, document, $, tplUtils) {
+    var pages = {};
+
     var _logger = {
         log: tplUtils.devLog,
         error: tplUtils.devError,
@@ -24,27 +26,40 @@
         'aboutUs': 'aboutUs'
     };
 
-    function ViewerList(pages) {
-        this.pages = pages;
+    function ViewerList(p) {
+        pages = p;
+
+        return {
+            getPageCode: getPageCode,
+            getPageList: getPageList,
+            getPageNames: getPageNames,
+            filter: filter,
+            enablePages: enablePages
+        };
+
     }
 
-    ViewerList.prototype.getPageCode = _getPageCode;
+    function getPageCode(page) {
+        if (page.page) return _pageCodes[page.atom + '_' + page.page];
 
-    ViewerList.prototype.getPageList = function () {
-        return this.pages;
-    };
+        return _pageCodes[page.atom];
+    }
 
-    ViewerList.prototype.getPageNames = function () {
-        return this.pages.map(function (item) {
-            return _getPageCode(item.atom);
+    function getPageList() {
+        return pages;
+    }
+
+    function getPageNames() {
+        return pages.map(function (item) {
+            return getPageCode(item.atom);
         });
-    };
+    }
 
-    ViewerList.prototype.filter = function () {
-        this.pages = this.pages.filter(_isShouldBeAdded);
-    };
+    function filter() {
+        pages = pages.filter(_isShouldBeAdded);
+    }
 
-    ViewerList.prototype.enablePages = function () {
+    function enablePages() {
         var tmpContainer = $('<div/>'),
             pagesContainer = $('.slide-wrap');
 
@@ -60,7 +75,7 @@
 
             slide.appendTo(pagesContainer);
         }
-    };
+    }
 
     function _isShouldBeAdded(page) {
         var pageCode = _getPageCode(page);
@@ -111,11 +126,6 @@
         }
     }
 
-    function _getPageCode(page) {
-        if (page.page) return _pageCodes[page.atom + '_' + page.page];
-
-        return _pageCodes[page.atom];
-    }
 
     window.ViewerList = ViewerList;
 })(window, window.document, window.jQuery, window.tplUtils);
