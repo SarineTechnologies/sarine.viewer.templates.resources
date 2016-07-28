@@ -111,7 +111,7 @@
         }
     }
 
-    function _getPageCode() {
+    function _getPageCode(page) {
         if (page.page) return _pageCodes[page.atom + '_' + page.page];
 
         return _pageCodes[page.atom];
