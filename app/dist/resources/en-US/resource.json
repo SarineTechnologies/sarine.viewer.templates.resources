@@ -205,5 +205,6 @@
   "slide.reportId": "Report ID:",
   "slide.issueDate": "Issue Date:",
   "slide.light.reportId.title": "Report ID:",
-  "slide.light.issueDate.title": "Issue Date:"
+  "slide.light.issueDate.title": "Issue Date:",
+  "dashboard.logo.src": "logo-sarine.svg"
 }
