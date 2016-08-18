@@ -209,5 +209,9 @@
   "dashboard.contactus.title": "Contact Us",
   "slide.real.title": "Real View",
   "dashboard.contactus.address.title": "Your contact info title",
-  "dashboard.contactus.address.body": "Your contact info body"
+  "dashboard.contactus.address.body": "Your contact info body",
+  "dashboard.footer.text1": "Sarine ID:",
+  "dashboard.footer.text2": "Sarine Reports",
+  "dashboard.footer.text3": "Light Performance Results",
+  "dashboard.footer.text4": "Learn More"
 }
