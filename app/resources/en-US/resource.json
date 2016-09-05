@@ -126,6 +126,7 @@
   "slide.summary.width.title": "Width",
   "slide.summary.height.title": "Height",
   "slide.summary.depth.title": "Depth",
+  "slide.summary.lotId.title": "Lot ID",
   "slide.summary.stockId.title": "Stock ID",
   "slide.summary.comment.title": "Comment",
   "navigation.summary.title": "Summary",
