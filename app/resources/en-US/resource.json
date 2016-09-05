@@ -181,6 +181,7 @@
   "dashboard.properties.width.title": "Width",
   "dashboard.properties.height.title": "Height",
   "dashboard.properties.depth.title": "Depth",
+  "dashboard.properties.lotId.title" : "Lot ID",
   "dashboard.contactus.title": "Contact Us",
   "slide.real.title": "Real View",
   "dashboard.contactus.address.title": "Your contact info title",
