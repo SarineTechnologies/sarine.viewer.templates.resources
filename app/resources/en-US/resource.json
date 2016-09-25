@@ -43,6 +43,11 @@
 <<<<<<< refs/remotes/origin/common-texts
   "popup.shape.title": "Shape",
   "popup.shape.body": "Lorem ipsum dolor sit amet, id quem democritum per. Doctus indoctum omittantur usu in, te vim elit eripuit. At his case omnis legendos, diam sint suavitate cum an. Ne veri quaestio ius, at illum laoreet lucilius est. Mea tempor facilis alienum ne, etiam honestatis et eam.",
+<<<<<<< refs/remotes/origin/common-texts
+=======
+  "popup.externalImage.title": "AGS ASET",
+  "popup.externalImage.body": "AGSL Computer generated light performance map for this diamond. U.S Patent No: 7.355.683",  
+>>>>>>> Added strings for AGS-PGS
 =======
   "popup.externalImage.title": "AGS ASET",
   "popup.externalImage.body": "AGSL Computer generated light performance map for this diamond. U.S Patent No: 7.355.683",  
@@ -125,6 +130,7 @@
   "slide.summary.gradedBy": "Graded by ",
   "slide.summary.title": "Explore This Diamond Story",
 <<<<<<< refs/remotes/origin/common-texts
+<<<<<<< refs/remotes/origin/common-texts
   "slide.summary.polish.title": "Polish",
   "slide.summary.symmetry.title": "Symmetry",
   "slide.summary.fluorescence.title": "Fluorescence",
@@ -139,6 +145,8 @@
   "slide.externalImage.title": "AGS Report",
   "slide.externalImage.body": "AGSL Computer generated light performance map for this diamond. U.S Patent No: 7.355.683",
   "slide.externalImage.footer": "ASET Image &copy; 2016 American Gem Society and AGSL has provided this ASET image solely for use by Helzberg Diamonds as part of their Masterpiece Program and is not affiliated with Sarine in any way.",  
+>>>>>>> Added strings for AGS-PGS
+=======
 >>>>>>> Added strings for AGS-PGS
   "navigation.summary.title": "Summary",
   "navigation.light.title": "Light",
