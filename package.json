@@ -9,6 +9,7 @@
 <<<<<<< refs/remotes/origin/common-texts
 <<<<<<< refs/remotes/origin/common-texts
 <<<<<<< refs/remotes/origin/common-texts
+<<<<<<< refs/remotes/origin/common-texts
   "version": "1.20.0",
 =======
   "version": "1.16.0",
@@ -34,6 +35,9 @@
 =======
   "version": "1.22.4",
 >>>>>>> fixed version and updated dist (externalImage strings)
+=======
+  "version": "1.22.5",
+>>>>>>> bump version to 1.22.5
   "description": "common resources for viewer templates",
   "main": "index.js",
   "scripts": {
