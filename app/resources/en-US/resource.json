@@ -41,6 +41,9 @@
   "popup.aboutUs.title": "About Us",
   "popup.aboutUs.body": "About Us body",
 <<<<<<< refs/remotes/origin/common-texts
+<<<<<<< refs/remotes/origin/common-texts
+=======
+>>>>>>> removed duplicate of popup.externalImage entries; added text for popup.externalImage.body
   "popup.shape.title": "Shape",
   "popup.shape.body": "Lorem ipsum dolor sit amet, id quem democritum per. Doctus indoctum omittantur usu in, te vim elit eripuit. At his case omnis legendos, diam sint suavitate cum an. Ne veri quaestio ius, at illum laoreet lucilius est. Mea tempor facilis alienum ne, etiam honestatis et eam.",
 <<<<<<< refs/remotes/origin/common-texts
@@ -50,8 +53,12 @@
 >>>>>>> Added strings for AGS-PGS
 =======
   "popup.externalImage.title": "AGS ASET",
+<<<<<<< refs/remotes/origin/common-texts
   "popup.externalImage.body": "AGSL Computer generated light performance map for this diamond. U.S Patent No: 7.355.683",  
 >>>>>>> Added strings for AGS-PGS
+=======
+  "popup.externalImage.body": "Angular Spectrum Evaluation Tool® (ASET) was developed to demonstrate – in red, green, and blue – how the diamond is performing – in other words, how the diamond is handling and returning light to our eyes. Red indicates the brightest areas of the diamond – areas that attract the brightest light from above. Green also indicates light return; however, from an indirect source which is not as bright. The blue indicates a contrast pattern of dark reflections giving the diamond its personality.",  
+>>>>>>> removed duplicate of popup.externalImage entries; added text for popup.externalImage.body
   "slide.aboutUs.title": "About Us",
   "slide.aboutUs.subtitle": "Click the image to contact us",
   "slide.aboutUs.text": "To be the world leader in the provision of technological solutions for the diamond and gemstone industries, with innovative and advanced products and services for the benefit of the entire industry, from mine to consumers.",
