@@ -1,7 +1,11 @@
 {
   "name": "sarine.viewer.templates.resources",
   "title": "common resources for viewer templates",
+<<<<<<< refs/remotes/origin/common-texts
   "version": "1.22.6",
+=======
+  "version": "1.22.7",
+>>>>>>> add jewelry scripts
   "description": "common resources for viewer templates",
   "main": "index.js",
   "scripts": {
