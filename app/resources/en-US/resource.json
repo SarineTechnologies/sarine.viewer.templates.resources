@@ -49,6 +49,7 @@
 <<<<<<< refs/remotes/origin/common-texts
 =======
   "popup.externalImage.title": "AGS ASET",
+<<<<<<< refs/remotes/origin/common-texts
   "popup.externalImage.body": "AGSL Computer generated light performance map for this diamond. U.S Patent No: 7.355.683",  
 >>>>>>> Added strings for AGS-PGS
 =======
@@ -59,6 +60,9 @@
 =======
   "popup.externalImage.body": "Angular Spectrum Evaluation Tool® (ASET) was developed to demonstrate – in red, green, and blue – how the diamond is performing – in other words, how the diamond is handling and returning light to our eyes. Red indicates the brightest areas of the diamond – areas that attract the brightest light from above. Green also indicates light return; however, from an indirect source which is not as bright. The blue indicates a contrast pattern of dark reflections giving the diamond its personality.",  
 >>>>>>> removed duplicate of popup.externalImage entries; added text for popup.externalImage.body
+=======
+  "popup.externalImage.body": "Angular Spectrum Evaluation Tool&reg; (ASET) was developed to demonstrate – in red, green, and blue – how the diamond is performing – in other words, how the diamond is handling and returning light to our eyes.<br>Red indicates the brightest areas of the diamond – areas that attract the brightest light from above.<br>Green also indicates light return; however, from an indirect source which is not as bright.<br>The blue indicates a contrast pattern of dark reflections giving the diamond its personality.",  
+>>>>>>> fixed text for AGS-PGS
   "slide.aboutUs.title": "About Us",
   "slide.aboutUs.subtitle": "Click the image to contact us",
   "slide.aboutUs.text": "To be the world leader in the provision of technological solutions for the diamond and gemstone industries, with innovative and advanced products and services for the benefit of the entire industry, from mine to consumers.",
@@ -150,7 +154,7 @@
   "slide.summary.comment.title": "Comment",
 =======
   "slide.externalImage.title": "AGS Report",
-  "slide.externalImage.body": "AGSL Computer generated light performance map for this diamond. U.S Patent No: 7.355.683",
+  "slide.externalImage.body": "AGSL Computer generated light performance map for this diamond.<br>U.S Patent No: 7.355.683",
   "slide.externalImage.footer": "ASET Image &copy; 2016 American Gem Society and AGSL has provided this ASET image solely for use by Helzberg Diamonds as part of their Masterpiece Program and is not affiliated with Sarine in any way.",  
 >>>>>>> Added strings for AGS-PGS
 =======
