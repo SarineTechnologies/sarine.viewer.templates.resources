@@ -1,4 +1,5 @@
 <<<<<<< refs/remotes/origin/common-texts
+<<<<<<< refs/remotes/origin/common-texts
 {
   "name": "sarine.viewer.templates.resources",
   "title": "common resources for viewer templates",
@@ -39,6 +40,12 @@
 =======
   "version": "1.22.5",
 >>>>>>> bump version to 1.22.5
+=======
+{
+  "name": "sarine.viewer.templates.resources",
+  "title": "common resources for viewer templates",
+  "version": "1.22.10",
+>>>>>>> bump version 1.22.10
   "description": "common resources for viewer templates",
   "main": "index.js",
   "scripts": {
@@ -53,6 +60,10 @@
   "dependencies": {},
   "devDependencies": {
     "grunt": "^0.4.5",
+<<<<<<< refs/remotes/origin/common-texts
+=======
+    "grunt-appcache": "^0.1.8",
+>>>>>>> bump version 1.22.10
     "grunt-cleanempty": "^1.0.3",
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-compass": "^1.0.3",
@@ -79,6 +90,7 @@
   },
   "homepage": "https://github.com/SarineTechnologies/sarine.viewer.templates.resources"
 }
+<<<<<<< refs/remotes/origin/common-texts
 =======
 {
   "name": "sarine.viewer.templates.resources",
@@ -134,3 +146,5 @@
   "homepage": "https://github.com/SarineTechnologies/sarine.viewer.templates.resources"
 }
 >>>>>>> Updated dist; bump version to 1.22.6
+=======
+>>>>>>> bump version 1.22.10
