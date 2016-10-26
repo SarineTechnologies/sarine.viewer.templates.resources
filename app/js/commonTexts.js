@@ -134,8 +134,7 @@
         return resourceObj[mapKey] + window.cacheVersion;
     }
 
-    function getTextByKey(key)
-    {
+    function getTextByKey(key) {
         return dynamicText[key];
     }
 
