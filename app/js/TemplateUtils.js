@@ -2,7 +2,17 @@
 	'use strict';
 	
 	// devLog(): console.log enabled on dev environment or by adding 'dev_log' to the URL hash
-	var isDev = window.location.origin.indexOf('localhost') !== -1 || window.location.hash.indexOf('dev_log') !== -1;
+	var isDev = window.location.origin.indexOf('localhost') !== -1 || window.location.hash.indexOf('dev_log') !== -1,
+		resourceUrls = {
+	        overrideCss: getResourceUrl({
+	            dev: 'tmp/content/viewer-template-configuration/override/template.css',
+	            dist: window.configuration.configUrl + '/template.css'
+	        }),
+	        extensions: getResourceUrl({
+	            dev: 'tmp/content/viewer-template-configuration/override/scripts/template.js',
+	            dist: window.configuration.configUrl + '/scripts/template.js'
+	        })
+    	};
 
 	var _now = Date.now || function() {
     	return new Date().getTime();
@@ -47,6 +57,8 @@
 
 
 	function getScriptByPromise(url1) {
+		url1 = url1 || resourceUrls.extensions;
+
 		return new Promise(function (resolve, reject) {
 			loadScript(url1, resolve, function (e) {
 				reject(Error('Error loading script ' + url1));
@@ -171,7 +183,7 @@
         }
         var sheets = document.styleSheets;
         ss.rel = "stylesheet";
-        ss.href = href;
+        ss.href = href || resourceUrls.overrideCss;
         // temporarily set media to something inapplicable to ensure it'll fetch without blocking render
         ss.media = "only x";
         // Inject link
@@ -332,4 +344,10 @@
 		document.querySelector('.preloader').style.display = 'none';
 		$resultContainer.html('Loaded');
 	}
+
+	function getResourceUrl(resourceObj) {
+        var mapKey = window.location.origin.indexOf('localhost') === -1 ? 'dist' : 'dev';
+        return resourceObj[mapKey] + window.cacheVersion;
+    }
+
 })(window, window.document, window.jQuery);
