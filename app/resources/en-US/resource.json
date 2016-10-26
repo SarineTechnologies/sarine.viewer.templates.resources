@@ -40,6 +40,7 @@
   "popup.thumbnail_menu.title": "Diamond Story",
   "popup.aboutUs.title": "About Us",
   "popup.aboutUs.body": "About Us body",
+<<<<<<< HEAD
 <<<<<<< refs/remotes/origin/common-texts
 <<<<<<< refs/remotes/origin/common-texts
 =======
@@ -66,6 +67,10 @@
 >>>>>>> fixed text for AGS-PGS
 =======
 >>>>>>> fixed slide.summary.* rows removed after merge
+=======
+  "popup.shape.title": "Shape",
+  "popup.shape.body": "Lorem ipsum dolor sit amet, id quem democritum per. Doctus indoctum omittantur usu in, te vim elit eripuit. At his case omnis legendos, diam sint suavitate cum an. Ne veri quaestio ius, at illum laoreet lucilius est. Mea tempor facilis alienum ne, etiam honestatis et eam.",
+>>>>>>> develop
   "slide.aboutUs.title": "About Us",
   "slide.aboutUs.subtitle": "Click the image to contact us",
   "slide.aboutUs.text": "To be the world leader in the provision of technological solutions for the diamond and gemstone industries, with innovative and advanced products and services for the benefit of the entire industry, from mine to consumers.",
@@ -143,11 +148,14 @@
   "slide.summary.partyInformation": "Information provided by 3<sup>rd</sup> party",
   "slide.summary.gradedBy": "Graded by ",
   "slide.summary.title": "Explore This Diamond Story",
+<<<<<<< HEAD
 <<<<<<< refs/remotes/origin/common-texts
 <<<<<<< refs/remotes/origin/common-texts
 <<<<<<< refs/remotes/origin/common-texts
 =======
 >>>>>>> fixed slide.summary.* rows removed after merge
+=======
+>>>>>>> develop
   "slide.summary.polish.title": "Polish",
   "slide.summary.symmetry.title": "Symmetry",
   "slide.summary.fluorescence.title": "Fluorescence",
@@ -158,6 +166,7 @@
   "slide.summary.lotId.title": "Lot ID",
   "slide.summary.stockId.title": "Stock ID",
   "slide.summary.comment.title": "Comment",
+<<<<<<< HEAD
 <<<<<<< refs/remotes/origin/common-texts
 =======
   "slide.externalImage.title": "AGS Report",
@@ -168,6 +177,8 @@
 >>>>>>> Added strings for AGS-PGS
 =======
 >>>>>>> fixed slide.summary.* rows removed after merge
+=======
+>>>>>>> develop
   "navigation.summary.title": "Summary",
   "navigation.light.title": "Light",
   "navigation.brilliance.title": "Brilliance",

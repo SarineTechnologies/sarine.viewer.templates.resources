@@ -3,6 +3,7 @@
 {
   "name": "sarine.viewer.templates.resources",
   "title": "common resources for viewer templates",
+<<<<<<< HEAD
 <<<<<<< refs/remotes/origin/common-texts
 <<<<<<< refs/remotes/origin/common-texts
 <<<<<<< refs/remotes/origin/common-texts
@@ -46,6 +47,9 @@
   "title": "common resources for viewer templates",
   "version": "1.22.10",
 >>>>>>> bump version 1.22.10
+=======
+  "version": "1.22.10",
+>>>>>>> develop
   "description": "common resources for viewer templates",
   "main": "index.js",
   "scripts": {
