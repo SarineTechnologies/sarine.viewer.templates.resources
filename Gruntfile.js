@@ -145,7 +145,7 @@ module.exports = function (grunt) {
             {task: 'copy:dist_assets2',     exec: 1},
             {task: 'copy:dist_resources',     exec: 1},
             {task: 'clean',                 exec: 1},
-            {task: 'appcache',              exec: 1},
+            //{task: 'appcache',              exec: 1},
         ]);
     });
 

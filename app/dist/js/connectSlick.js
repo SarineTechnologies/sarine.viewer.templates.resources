@@ -79,7 +79,7 @@
                 }
             } 
             // init summaryStories slick, only 1 time
-            if (containerName === '.summary__stories' && isInitial && $container.is(':visible')) {
+            if (containerName === '.summary__stories' && isInitial) { // && $container.is(':visible')
                 if (wData && wData.hasStorylineSlider) {                
                     $container.slick({
                         draggable: true,

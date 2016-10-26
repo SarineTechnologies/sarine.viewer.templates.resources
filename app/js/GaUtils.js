@@ -114,7 +114,7 @@
     function _3dExplore(pageview) {
         if(pageview){
             devLog("3D_explore VirtualPage");
-            sendPageView("vp/" + "Loupe3D" + "/3D_explore");
+            sendPageView("vp/" + "Loupe3D" + "/3D_explore", 'tracker1');
         } else {
             devLog('3D_explore');
             gaRun('send', 'event', 'Navigation', '3D_explore');
@@ -146,11 +146,11 @@
     function _set_3d_explore(dataObj) {
         if (dataObj.isMobile) {
             $('.inspect-stone > .viewport').on('touchstart', function (e) {
-                _3dExplore();
+                _3dExplore(true);
             });
         } else {
             $('.inspect-stone > .viewport').on('mousedown', function (e) {
-                _3dExplore();
+                _3dExplore(true);
             });
         }
     }

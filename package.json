@@ -1,7 +1,7 @@
 {
   "name": "sarine.viewer.templates.resources",
   "title": "common resources for viewer templates",
-  "version": "1.0.0",
+  "version": "1.23.0",
   "description": "common resources for viewer templates",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,6 @@
   "dependencies": {},
   "devDependencies": {
     "grunt": "^0.4.5",
-    "grunt-appcache": "^0.1.8",
     "grunt-cleanempty": "^1.0.3",
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-compass": "^1.0.3",
@@ -35,11 +34,8 @@
     "grunt-template": "^0.2.3",
     "load-grunt-tasks": "^3.1.0"
   },
-  "bugs": {
-    "url": "https://github.com/SarineTechnologies/sarine.viewer.templates.resources/issues"
-  },
   "scripts": {
-    "publish": "grunt push:minor"
+    "publish": "grunt build && grunt push:minor"
   },
   "homepage": "https://github.com/SarineTechnologies/sarine.viewer.templates.resources"
 }

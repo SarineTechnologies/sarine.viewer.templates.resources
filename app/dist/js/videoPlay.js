@@ -28,7 +28,7 @@
 
     btn.addEventListener('click', function (e) {
       if (videoElement.readyState < 3) {
-        videoElement.src = videoElement.getAttribute('data-src');
+        videoElement.src = videoElement.getAttribute('data-video-src');
         videoElement.preload = 'auto';
         videoElement.load();
         forceReloaded = true;

@@ -5,12 +5,12 @@
         var buttons = $('.share-container > span'),
             stone = window.stones && window.stones[0],
             config = {
-                sarineId: stone.friendlyName,
+                sarineId: report ? report.friendlyName : stone.friendlyName,
                 slogan: 'Check out this beautiful Diamond',
                 shareTitle: null,
                 shareBody: null,
                 shareUrl: null,
-                shareImg: 'http://sarine.com/wp-content/uploads/2015/04/Diamond-Imaging.jpg',
+                shareImg: 'http://d3n02ovm6tlpii.cloudfront.net/content/viewers/shell/v1/images/Diamond-Imaging.jpg',
                 customData: null
             };
         

@@ -2,7 +2,17 @@
 	'use strict';
 	
 	// devLog(): console.log enabled on dev environment or by adding 'dev_log' to the URL hash
-	var isDev = window.location.origin.indexOf('localhost') !== -1 || window.location.hash.indexOf('dev_log') !== -1;
+	var isDev = window.location.origin.indexOf('localhost') !== -1 || window.location.hash.indexOf('dev_log') !== -1,
+		resourceUrls = {
+	        overrideCss: getResourceUrl({
+	            dev: 'tmp/content/viewer-template-configuration/override/template.css',
+	            dist: window.configuration.configUrl + '/template.css'
+	        }),
+	        extensions: getResourceUrl({
+	            dev: 'tmp/content/viewer-template-configuration/override/scripts/template.js',
+	            dist: window.configuration.configUrl + '/scripts/template.js'
+	        })
+    	};
 
 	var _now = Date.now || function() {
     	return new Date().getTime();
@@ -11,6 +21,18 @@
 	function devLog() {
 		if (isDev) {
 			console.log.apply(window.console, arguments);
+		}
+	}
+
+	function devError() {
+		if (isDev) {
+			console.error.apply(window.console, arguments);
+		}
+	}
+
+	function devWarn() {
+		if (isDev) {
+			console.warn.apply(window.console, arguments);
 		}
 	}
 	
@@ -35,6 +57,8 @@
 
 
 	function getScriptByPromise(url1) {
+		url1 = url1 || resourceUrls.extensions;
+
 		return new Promise(function (resolve, reject) {
 			loadScript(url1, resolve, function (e) {
 				reject(Error('Error loading script ' + url1));
@@ -142,23 +166,24 @@
 	// [c]2015 @scottjehl, Filament Group, Inc.
 	// Licensed MIT
 
-	function loadCSS(href, before, media) {
+	function loadCSS(href, before, media, eventName) {
         // Arguments explained:
         // `href` [REQUIRED] is the URL for your CSS file.
         // `before` [OPTIONAL] is the element the script should use as a reference for injecting our stylesheet <link> before
         // By default, loadCSS attempts to inject the link after the last stylesheet or script in the DOM. However, you might desire a more specific location in your document.
         // `media` [OPTIONAL] is the media type or query of the stylesheet. By default it will be 'all'
         var ss = document.createElement("link");
+		var eventName = eventName || 'readyCss';
         var ref;
         if (before) {
-            ref = before;
+            ref = before.length && before.length > 0 ? before[0] : before;
         } else {
             var refs = (document.body || document.getElementsByTagName("head")[0]).childNodes;
             ref = refs[refs.length - 1];
         }
         var sheets = document.styleSheets;
         ss.rel = "stylesheet";
-        ss.href = href;
+        ss.href = href || resourceUrls.overrideCss;
         // temporarily set media to something inapplicable to ensure it'll fetch without blocking render
         ss.media = "only x";
         // Inject link
@@ -182,7 +207,7 @@
         ss.onloadcssdefined = onloadcssdefined;
         onloadcssdefined(function() {
             ss.media = media || "all";
-            $(document).trigger('readyCss');
+            $(document).trigger(eventName);
         });
         return ss;
     };
@@ -268,6 +293,8 @@
 		recurse: recurse,
 		isDev: isDev,
 		devLog: devLog,
+		devError: devError,
+		devWarn: devWarn,
 		fire: fire,
 		debounce: debounce,
 		processUrl: processUrl,
@@ -317,4 +344,10 @@
 		document.querySelector('.preloader').style.display = 'none';
 		$resultContainer.html('Loaded');
 	}
+
+	function getResourceUrl(resourceObj) {
+        var mapKey = window.location.origin.indexOf('localhost') === -1 ? 'dist' : 'dev';
+        return resourceObj[mapKey] + window.cacheVersion;
+    }
+
 })(window, window.document, window.jQuery);
