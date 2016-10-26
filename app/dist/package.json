@@ -1,19 +1,7 @@
 {
   "name": "sarine.viewer.templates.resources",
   "title": "common resources for viewer templates",
-<<<<<<< HEAD
-<<<<<<< refs/remotes/origin/common-texts
-<<<<<<< refs/remotes/origin/common-texts
-  "version": "1.22.6",
-=======
-  "version": "1.22.7",
->>>>>>> add jewelry scripts
-=======
-  "version": "1.22.10",
->>>>>>> added updated dist
-=======
-  "version": "1.22.10",
->>>>>>> develop
+  "version": "1.23.0",
   "description": "common resources for viewer templates",
   "main": "index.js",
   "scripts": {
@@ -45,9 +33,6 @@
     "grunt-replace": "^0.8.0",
     "grunt-template": "^0.2.3",
     "load-grunt-tasks": "^3.1.0"
-  },
-  "bugs": {
-    "url": "https://github.com/SarineTechnologies/sarine.viewer.templates.resources/issues"
   },
   "scripts": {
     "publish": "grunt build && grunt push:minor"
