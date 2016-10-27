@@ -286,6 +286,11 @@
         return  paramName + ' not found in query';
     } 
 
+    function getResourceUrl(resourceObj) {
+        var mapKey = window.location.origin.indexOf('localhost') === -1 ? 'dist' : 'dev';
+        return resourceObj[mapKey] + window.cacheVersion;
+    }
+
 	window.tplUtils = {
 		loadComponents: loadComponents,
 		getPath: getPath,
@@ -343,11 +348,6 @@
 		document.querySelector('.slider').style.display = '';
 		document.querySelector('.preloader').style.display = 'none';
 		$resultContainer.html('Loaded');
-	}
-
-	function getResourceUrl(resourceObj) {
-        var mapKey = window.location.origin.indexOf('localhost') === -1 ? 'dist' : 'dev';
-        return resourceObj[mapKey] + window.cacheVersion;
-    }
+	}	
 
 })(window, window.document, window.jQuery);
