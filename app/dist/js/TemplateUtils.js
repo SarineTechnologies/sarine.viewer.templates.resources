@@ -18,7 +18,11 @@
 		capitalizeFirst: capitalizeFirst,
 		getParameter: getParameter,
         jsExtension: {
-            events: {},
+            events: {
+                beforeDataLoaded: 'extensions_beforeDataLoaded',
+                beforeMainLoaded: 'extensions_beforeMainLoaded',
+                afterMainLoaded: 'extensions_afterMainLoaded'
+            },
             load: loadJsExtension
         }
 	};
@@ -41,7 +45,6 @@
   	};
 
     function loadJsExtension (callback) {
-        console.log('loadJsExtension', callback);
         getScriptByPromise().then(function(){
             callback();
         }, function(){
