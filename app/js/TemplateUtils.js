@@ -17,11 +17,14 @@
 		sortArrayByObjectKey: sortArrayByObjectKey,
 		capitalizeFirst: capitalizeFirst,
 		getParameter: getParameter,
+        cssExtension: {
+            load: loadCssExtension
+        },
         jsExtension: {
             events: {
-                beforeDataLoaded: 'extensions_beforeDataLoaded',
-                beforeMainLoaded: 'extensions_beforeMainLoaded',
-                afterMainLoaded: 'extensions_afterMainLoaded'
+                beforeDataLoaded: 'extensions_before_resources_Loaded',
+                beforeMainLoaded: 'extensions_before_CSS_Loaded',
+                afterMainLoaded: 'extensions_after_CSS_Loaded'
             },
             load: loadJsExtension
         }
@@ -31,7 +34,7 @@
 	var isDev = window.location.origin.indexOf('localhost') !== -1 || window.location.hash.indexOf('dev_log') !== -1,
 		resourceUrls = {
 	        overrideCss: getResourceUrl({
-	            dev: 'tmp/content/viewer-template-configuration/override/template.css',
+	            dev: 'tmp/content/viewer-template-configuration/override/template.css', 
 	            dist: window.configuration.configUrl + '/template.css'
 	        }),
 	        extensions: getResourceUrl({
@@ -43,6 +46,10 @@
 	var _now = Date.now || function() {
     	return new Date().getTime();
   	};
+
+    function loadCssExtension () {
+        loadCSS();
+    }
 
     function loadJsExtension (callback) {
         getScriptByPromise().then(function(){
