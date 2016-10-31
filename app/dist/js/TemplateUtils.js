@@ -306,7 +306,11 @@
 		loadCSS: loadCSS,
 		sortArrayByObjectKey: sortArrayByObjectKey,
 		capitalizeFirst: capitalizeFirst,
-		getParameter: getParameter
+		getParameter: getParameter,
+                jsExtension: {
+                    events: {},
+                    load: function () {}
+                }
 	};
 })(window, window.document, window.jQuery);
 
