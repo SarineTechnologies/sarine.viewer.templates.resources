@@ -1,7 +1,29 @@
 (function (window, document, $) {
 	'use strict';
 	
-	// devLog(): console.log enabled on dev environment or by adding 'dev_log' to the URL hash
+    window.tplUtils = {
+		loadComponents: loadComponents,
+		getPath: getPath,
+		getScriptByPromise: getScriptByPromise,
+		recurse: recurse,
+		isDev: isDev,
+		devLog: devLog,
+		devError: devError,
+		devWarn: devWarn,
+		fire: fire,
+		debounce: debounce,
+		processUrl: processUrl,
+		loadCSS: loadCSS,
+		sortArrayByObjectKey: sortArrayByObjectKey,
+		capitalizeFirst: capitalizeFirst,
+		getParameter: getParameter,
+        jsExtension: {
+            events: {},
+            load: loadJsExtension
+        }
+	};
+    
+    // devLog(): console.log enabled on dev environment or by adding 'dev_log' to the URL hash
 	var isDev = window.location.origin.indexOf('localhost') !== -1 || window.location.hash.indexOf('dev_log') !== -1,
 		resourceUrls = {
 	        overrideCss: getResourceUrl({
@@ -17,6 +39,16 @@
 	var _now = Date.now || function() {
     	return new Date().getTime();
   	};
+
+    function loadJsExtension (callback) {
+        console.log('loadJsExtension', callback);
+        getScriptByPromise().then(function(){
+            callback();
+        }, function(){
+            // run callback even if extension loading have failed
+            callback();
+        });
+    }
 
 	function devLog() {
 		if (isDev) {
@@ -290,28 +322,7 @@
         var mapKey = window.location.origin.indexOf('localhost') === -1 ? 'dist' : 'dev';
         return resourceObj[mapKey] + window.cacheVersion;
     }
-
-	window.tplUtils = {
-		loadComponents: loadComponents,
-		getPath: getPath,
-		getScriptByPromise: getScriptByPromise,
-		recurse: recurse,
-		isDev: isDev,
-		devLog: devLog,
-		devError: devError,
-		devWarn: devWarn,
-		fire: fire,
-		debounce: debounce,
-		processUrl: processUrl,
-		loadCSS: loadCSS,
-		sortArrayByObjectKey: sortArrayByObjectKey,
-		capitalizeFirst: capitalizeFirst,
-		getParameter: getParameter,
-                jsExtension: {
-                    events: {},
-                    load: function () {}
-                }
-	};
+	
 })(window, window.document, window.jQuery);
 
 /**
