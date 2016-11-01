@@ -57,7 +57,7 @@
         }, function(){
             // run callback even if extension loading have failed
             callback();
-            devError();
+            devError('Fail to load js extension file');
         });
     }
 
