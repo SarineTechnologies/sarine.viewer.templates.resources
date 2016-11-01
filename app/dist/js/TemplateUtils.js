@@ -22,9 +22,9 @@
         },
         jsExtension: {
             events: {
-                beforeDataLoaded: 'extensions_before_resources_Loaded',
-                beforeMainLoaded: 'extensions_before_CSS_Loaded',
-                afterMainLoaded: 'extensions_after_CSS_Loaded'
+                beforeResourceLoaded: 'extensions_before_resources_Loaded',
+                beforeCssLoaded: 'extensions_before_CSS_Loaded',
+                afterCssLoaded: 'extensions_after_CSS_Loaded'
             },
             load: loadJsExtension
         }
