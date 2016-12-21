@@ -21,8 +21,8 @@
             })
         },        
         textPromises = {
-            baseText: window.baseText ? jQuery.Deferred().resolve(window.baseText) : $.getJSON(resourceUrls.baseTexts),
-            overrideText: window.overrideText ? jQuery.Deferred().resolve(window.overrideText) : $.getJSON(resourceUrls.overrideTexts)
+            baseText: $.getJSON(resourceUrls.baseTexts),
+            overrideText: $.getJSON(resourceUrls.overrideTexts)
         };
 
     window.baseFeatures = window.baseFeatures || {};
