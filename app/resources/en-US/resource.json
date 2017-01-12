@@ -206,6 +206,7 @@
   "popup.externalImage.title" : "AGS ASET",
   "popup.externalImage.body" : "Angular Spectrum Evaluation Tool&reg; (ASET) was developed to demonstrate - in red, green, and blue - how the diamond is performing - in other words, how the diamond is handling and returning light to our eyes.<br>Red indicates the brightest areas of the diamond - areas that attract the brightest light from above.<br>Green also indicates light return; however, from an indirect source which is not as bright.<br>The blue indicates a contrast pattern of dark reflections giving the diamond its personality.",
   "slide.externalImage.title" : "AGS Report",
+  "slide.externalImage.subtitle" : "AGS Light Performance",
   "slide.externalImage.body" : "AGSL Computer generated light performance map for this diamond.<br>U.S Patent No: 7.355.683",
   "slide.externalImage.footer" : "ASET Image &copy; 2016 American Gem Society and AGSL has provided this ASET image solely for use by Helzberg Diamonds as part of their Masterpiece Program and is not affiliated with Sarine in any way.",
   "navigation.externalImage.title" : "AGS ASET",
