@@ -263,20 +263,5 @@
   "navigation.main.stone.title": "Main stone",
   "navigation.side.stone.title": "Side Stone",
   "navigation.band.title": "Band",
-  "navigation.ring.title": "Ring",
-  "tags.program.title": "Program",
-  "tags.collection.title": "Collection",
-  "tags.brand.title": "Brand",
-  "tags.jewelry.title": "Jewelry",
-  "tags.sku.title": "SKU",
-  "tags.style.title": "Style",
-  "tags.laser.title": "laser",
-  "tags.supplier.title": "Supplier",
-  "tags.location.title": "Location",
-  "tags.region.title": "Region",
-  "tags.store.title": "Store",
-  "tags.qr.title": "QR",
-  "tags.link.title": "Link",
-  "tags.catalog.title": "Catalog",
-  "tags.general.title": "General"
+  "navigation.ring.title": "Ring"
 }
