@@ -43,7 +43,7 @@
                 // standard expression for sprintf() function
                 return sprintf(format, value);
             }
-        };
+        }
 
 		function formatDimensions(configFormat, dimensions) {
             var pattern = /\{([^}]+)\}+/gi,
@@ -85,10 +85,10 @@
             }
 
             return output;
-        };
+        }
 
         window.formatProp = {
 	        formatDimensions: formatDimensions,
 	        formatConfig: formatConfig
-    	}
+    	};
 })(window, window.document, window.jQuery, window.tplUtils);
