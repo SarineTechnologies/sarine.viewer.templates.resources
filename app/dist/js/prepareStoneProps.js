@@ -26,8 +26,8 @@
 				}
 			});
 		};
-		
-		window.formatConfig = function (format, value) {
+
+		function formatConfig(format, value) {
             var precision = 0;
             
             if (format.match(/\%.[0-9]s/gi)) {
@@ -45,7 +45,7 @@
             }
         };
 
-		window.formatDimensions = function (configFormat, dimensions) {
+		function formatDimensions(configFormat, dimensions) {
             var pattern = /\{([^}]+)\}+/gi,
                 matches = null,
                 parsed = {},
@@ -86,4 +86,9 @@
 
             return output;
         };
+
+        window.formatProp = {
+	        formatDimensions: formatDimensions,
+	        formatConfig: formatConfig
+    	}
 })(window, window.document, window.jQuery, window.tplUtils);
