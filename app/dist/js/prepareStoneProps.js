@@ -74,7 +74,7 @@
                     placeholder: placeholder
                 };
                 
-                parsed[elDimension].formatted = formatConfig(elFormat, dimensions[elDimension]);
+                parsed[elDimension].formatted = elFormat? formatConfig(elFormat, dimensions[elDimension]) : dimensions[elDimension];
                 
             });
 
