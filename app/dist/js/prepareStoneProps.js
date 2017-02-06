@@ -27,9 +27,9 @@
 			});
 		};
 
-		function formatConfig(format, value) {
+		function formatProperty(format, value) {
             var precision = 0;
-            
+
             if (format.match(/\%.[0-9]s/gi)) {
                 // found string then truncate number
 
@@ -45,42 +45,46 @@
             }
         }
 
-		function formatDimensions(configFormat, dimensions) {
+        function formatDynamicProperty(configFormat, stoneProperties) {
             var pattern = /\{([^}]+)\}+/gi,
                 matches = null,
                 parsed = {},
                 el = '',
                 elProp = [],
                 elFormat = '',
-                elDimension = '',
-                output = null;
+                elPropName = '',
+                output = null,
+                value;
                 
-            matches = configFormat.match(pattern);
+            matches = configFormat.toString().match(pattern);
             if ( ! matches) {
-                throw new Error("Format error. Format string should be surrounded with {} and contain some dimension. "
-                    + "Example: \"{W|%.2s}mm X {H|%s}mm X {D|%.2f}mm\" or \"{W|%.2s}\".");
+                throw new Error("Format error. Format string should be surrounded with {} and contain some dimension. Example: '{carat|%.2s}'.");
             }
             
-            matches.forEach(function (placeholder) {
-                // remove {} symbols
-                el = placeholder.replace("{", "").replace("}", "");
-                
-                // get dimension (W, H, D, etc.) and format value (%.2s, %.2f etc.)
+            matches.every(function (placeholder) {                
+                el = placeholder.replace("{", "").replace("}", "");                
                 elProp = el.split("|");                    
-                elDimension = elProp[0];
+                elPropName = elProp[0];
                 elFormat = elProp[1];                    
 
-                parsed[elDimension] = {
+                parsed[elPropName] = {
                     placeholder: placeholder
                 };
                 
-                parsed[elDimension].formatted = elFormat? formatConfig(elFormat, dimensions[elDimension]) : dimensions[elDimension];
-                
+                value = stoneProperties[elPropName];
+
+                if(!value)
+                    return false;
+               
+                parsed[elPropName].formatted = elFormat? formatProperty(elFormat, value) : value;
+                return true;   
             });
 
             // replace placeholders with formatted values ({W|%.2s} -> 2.99)
             output = configFormat;
             for (var i in parsed) {
+                if(!parsed[i].formatted)
+                    return null;
                 output = output.replace(parsed[i].placeholder, parsed[i].formatted);                
             }
 
@@ -88,7 +92,7 @@
         }
 
         window.formatProp = {
-	        formatDimensions: formatDimensions,
-	        formatConfig: formatConfig
+	        formatDynamicProperty: formatDynamicProperty,
+	        formatProperty: formatProperty
     	};
 })(window, window.document, window.jQuery, window.tplUtils);
