@@ -41,7 +41,12 @@
             }
             else {
                 // standard expression for sprintf() function
-                return sprintf(format, value);
+                var formatted = sprintf(format, value);
+                if (formatted === format) {
+                    console.error('format not valid');
+                    return value;
+                }
+                return formatted;
             }
         }
 
@@ -58,7 +63,7 @@
                 
             matches = configFormat.toString().match(pattern);
             if ( ! matches) {
-                throw new Error("Format error. Format string should be surrounded with {} and contain some dimension. Example: '{carat|%.2s}'.");
+                throw new Error("Format error. Format string should be surrounded with {} and contain some dimension. Example: '{width|%.2s}'.");
             }
             
             matches.every(function (placeholder) {                
