@@ -1,11 +1,40 @@
 (function (window, document, $) {
 	'use strict';
 	
-	// devLog(): console.log enabled on dev environment or by adding 'dev_log' to the URL hash
+    window.tplUtils = {
+		loadComponents: loadComponents,
+		getPath: getPath,
+		getScriptByPromise: getScriptByPromise,
+		recurse: recurse,
+		isDev: isDev,
+		devLog: devLog,
+		devError: devError,
+		devWarn: devWarn,
+		fire: fire,
+		debounce: debounce,
+		processUrl: processUrl,
+		loadCSS: loadCSS,
+		sortArrayByObjectKey: sortArrayByObjectKey,
+		capitalizeFirst: capitalizeFirst,
+		getParameter: getParameter,
+        cssExtension: {
+            load: loadCssExtension
+        },
+        jsExtension: {
+            events: {
+                beforeResourceLoaded: 'extensions_before_resources_Loaded',
+                beforeCssLoaded: 'extensions_before_CSS_Loaded',
+                afterCssLoaded: 'extensions_after_CSS_Loaded'
+            },
+            load: loadJsExtension
+        }
+	};
+    
+    // devLog(): console.log enabled on dev environment or by adding 'dev_log' to the URL hash
 	var isDev = window.location.origin.indexOf('localhost') !== -1 || window.location.hash.indexOf('dev_log') !== -1,
 		resourceUrls = {
 	        overrideCss: getResourceUrl({
-	            dev: 'tmp/content/viewer-template-configuration/override/template.css',
+	            dev: 'tmp/content/viewer-template-configuration/override/template.css', 
 	            dist: window.configuration.configUrl + '/template.css'
 	        }),
 	        extensions: getResourceUrl({
@@ -17,6 +46,20 @@
 	var _now = Date.now || function() {
     	return new Date().getTime();
   	};
+
+    function loadCssExtension () {
+        loadCSS();
+    }
+
+    function loadJsExtension (callback) {
+        getScriptByPromise().then(function(){
+            callback();
+        }, function(){
+            // run callback even if extension loading have failed
+            callback();
+            devError('Fail to load js extension file');
+        });
+    }
 
 	function devLog() {
 		if (isDev) {
@@ -286,23 +329,11 @@
         return  paramName + ' not found in query';
     } 
 
-	window.tplUtils = {
-		loadComponents: loadComponents,
-		getPath: getPath,
-		getScriptByPromise: getScriptByPromise,
-		recurse: recurse,
-		isDev: isDev,
-		devLog: devLog,
-		devError: devError,
-		devWarn: devWarn,
-		fire: fire,
-		debounce: debounce,
-		processUrl: processUrl,
-		loadCSS: loadCSS,
-		sortArrayByObjectKey: sortArrayByObjectKey,
-		capitalizeFirst: capitalizeFirst,
-		getParameter: getParameter
-	};
+    function getResourceUrl(resourceObj) {
+        var mapKey = window.location.origin.indexOf('localhost') === -1 ? 'dist' : 'dev';
+        return resourceObj[mapKey] + window.cacheVersion;
+    }
+	
 })(window, window.document, window.jQuery);
 
 /**
@@ -343,11 +374,6 @@
 		document.querySelector('.slider').style.display = '';
 		document.querySelector('.preloader').style.display = 'none';
 		$resultContainer.html('Loaded');
-	}
-
-	function getResourceUrl(resourceObj) {
-        var mapKey = window.location.origin.indexOf('localhost') === -1 ? 'dist' : 'dev';
-        return resourceObj[mapKey] + window.cacheVersion;
-    }
+	}	
 
 })(window, window.document, window.jQuery);
