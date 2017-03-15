@@ -3,6 +3,24 @@
     var socialShares = {
         overrideAddThisShareProperties: overrideAddThisShareProperties
     };
+    function overrideAddThisShareProperties(){
+
+        if(window.addthis_share!=undefined && window.addthis_share != null) {
+
+
+            var socialMediaTitleOverride = window.socialMediaTitleOverride;
+            var socialMediaImageOverRide = window.socialMediaImageOverRide;
+
+            if (socialMediaImageOverRide != undefined && socialMediaImageOverRide != null && socialMediaImageOverRide !== '') {
+
+                window.addthis_share.media = socialMediaImageOverRide;
+            }
+            if (socialMediaTitleOverride != undefined && socialMediaTitleOverride != null && socialMediaTitleOverride !== '') {
+
+                window.addthis_share.title = socialMediaTitleOverride;
+            }
+        }
+    }
     window.socialShares = socialShares;
     $(function () {
         'use strict';
@@ -119,24 +137,7 @@
                         console.log(errorThrown);
                     });
         }
-        function overrideAddThisShareProperties(){
 
-            if(window.addthis_share!=undefined && window.addthis_share != null) {
-
-
-                var socialMediaTitleOverride = window.socialMediaTitleOverride;
-                var socialMediaImageOverRide = window.socialMediaImageOverRide;
-
-                if (socialMediaImageOverRide != undefined && socialMediaImageOverRide != null && socialMediaImageOverRide !== '') {
-
-                    window.addthis_share.media = socialMediaImageOverRide;
-                }
-                if (socialMediaTitleOverride != undefined && socialMediaTitleOverride != null && socialMediaTitleOverride !== '') {
-
-                    window.addthis_share.title = socialMediaTitleOverride;
-                }
-            }
-        }
 
         // show/hide social block for mobile devices
         try {
