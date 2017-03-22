@@ -1,5 +1,6 @@
 (function (window, document, $) {
 
+
     var socialShares = {
         overrideAddThisShareProperties: overrideAddThisShareProperties
     };
@@ -21,6 +22,7 @@
             }
         }
     }
+
     window.socialShares = socialShares;
     $(function () {
         'use strict';
