@@ -1,9 +1,9 @@
 (function (window, document, $) {
 
+
     var socialShares = {
         overrideAddThisShareProperties: overrideAddThisShareProperties
     };
-    window.socialShares = socialShares;
     function overrideAddThisShareProperties(){
 
         if(window.addthis_share!=undefined && window.addthis_share != null) {
@@ -23,6 +23,7 @@
         }
     }
 
+    window.socialShares = socialShares;
     $(function () {
         'use strict';
         
@@ -138,6 +139,7 @@
                         console.log(errorThrown);
                     });
         }
+
 
         // show/hide social block for mobile devices
         try {
