@@ -51,6 +51,10 @@
         }
 
         function formatDynamicProperty(configFormat, stoneProperties) {
+
+            if (configFormat.indexOf('{') === -1)
+                configFormat = "{"+configFormat+"}";
+            
             var pattern = /\{([^}]+)\}+/gi,
                 matches = null,
                 parsed = {},
