@@ -82,7 +82,7 @@
                 
                 value = stoneProperties[elPropName];
 
-                if(!value)
+                if(value !== 0 && !value)
                     return false;
                
                 parsed[elPropName].formatted = elFormat? formatProperty(elFormat, value) : value;
