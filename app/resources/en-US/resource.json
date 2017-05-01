@@ -15,6 +15,10 @@
   "popup.cut_symmery.title": "Cut & Craftsmanship",
   "popup.cut_symmery3d.body": "Cut grade is determined by the quality of the diamond's craftsmanship. In the hands of the professional cutter, the rough stone is transformed into a polished diamond featuring optimal proportion, symmetry and light refraction. The cut is the diamond's unique signature, reflecting its individual character and beauty.",
   "popup.cut_symmery3d.title": "Cut and Symmentry Grading",
+  
+  "popup.cut3d.body": "Cut is the measure of a diamond’s beauty and craftsmanship. A diamond's cut grade is determined by its geometrical proportions and symmetry, which affect the play of light reflected in the diamond.",
+  "popup.cut3d.title": "Cut and Symmentry Grading",  
+
   "popup.fire.body": "When light enters and exits the dense structure of the diamond, it refracts, or bends. This refraction radiates vivid flares of rainbow colors that are commonly described as the diamond's 'fire'. Diamonds with intense fire are appreciated for their fascinating play of color and beauty at different angles.",
   "popup.fire.title": "Fire",
   "popup.hearts.body": "A distinctive circular hearts pattern is apparent from the bottom view of the diamond’s pavilion. Created by the play of light as it enters and exits the diamond, the hearts pattern indicates superior optical symmetry and a higher cut grade.",
@@ -269,6 +273,5 @@
   "navigation.ring.title": "Ring",
   "navigation.main.stone.title": "Main stone",
   "navigation.side.stone.title": "Side Stone",
-  "navigation.band.title": "Band",
-  "navigation.ring.title": "Ring"
+  "navigation.band.title": "Band"
 }
