@@ -64,5 +64,5 @@ function getTotalGrade() {
         });
     }
 }
-window.gradeScaleUtils = gradeScalesUtils;
+window.gradeScalesUtils = gradeScalesUtils;
 })(window, window.document, window.jQuery);
