@@ -40,7 +40,7 @@ function setBasicGradeScalesOnElement(currentGrade, percents) {
     scaleElement.innerText = grade.name;
 }
 //should return object like this {"totalGrade" : "val" , "stars" :val" }
-function getTotalGrade() {
+function getTotalGrade(stone) {
 
     var result =  {"totalGrade" : "","stars":""};
     var name = stone && stone.lightGrades && stone.lightGrades.totalGrade && stone.lightGrades.totalGrade.name,
