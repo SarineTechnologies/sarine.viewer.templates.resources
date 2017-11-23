@@ -3,6 +3,25 @@
  */
 (function (window, document, $) {
 
+    var colorGradeMaps = {
+        "D": 1,
+        "E" :2,
+        "F" :3,
+        "G" :4,
+        "H" :5,
+        "I" :6,
+        "J" :7,
+        "K" :8,
+        "L" :9,
+        "M" :10,
+        "N" :11,
+        "OP":12,
+        "QR":13,
+        "ST":14,
+        "UV":15,
+        "WX":16,
+        "YZ":17
+    }
     var colorExperienceHelper = {
 
         initColorView : initColorView,
