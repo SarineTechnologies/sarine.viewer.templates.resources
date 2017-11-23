@@ -96,6 +96,6 @@
     }
 
 
-
     window.colorExperienceHelper = colorExperienceHelper;
+
 })(window, window.document, window.jQuery);
