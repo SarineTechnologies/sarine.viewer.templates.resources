@@ -29,7 +29,7 @@
     }
     function resetColorByIndex(index){
 
-        if(index ==0  || index == 16 )
+        if(index ==0  || index == Object.keys(colorGradeMaps).length )
             return ;
         $('.owl-carousel').trigger('to.owl.carousel',index-1)
     }
@@ -40,8 +40,13 @@
         resetColorByIndex(index);
 
     }
-    function initColorView(){
+    function initColorView(pageCodes){
 
+        var stone= null;
+        if(window.stones && window.stones[0])
+            stone = window.stones[0];
+        if(!stone)
+            return ;
         var color =  stone.stoneProperties.color;
         var selector = $('.color-container img');//.children('img');
         if(selector.length> 0 ){
