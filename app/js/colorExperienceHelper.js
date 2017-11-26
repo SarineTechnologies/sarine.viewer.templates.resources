@@ -40,8 +40,13 @@
         resetColorByIndex(index);
 
     }
-    function initColorView(){
+    function initColorView(pageCodes){
 
+        var stone= null;
+        if(window.stones && window.stones[0])
+            stone = window.stones[0];
+        if(!stone)
+            return ;
         var color =  stone.stoneProperties.color;
         var selector = $('.color-container img');//.children('img');
         if(selector.length> 0 ){
