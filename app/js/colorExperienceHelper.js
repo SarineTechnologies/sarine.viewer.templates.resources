@@ -98,6 +98,12 @@
                     break;
             }
         });
+        $('.owl-item.active').on('click',function(event){
+            var $this = $(this);
+            var color = $this.children().children().first()[0].innerText;
+            var pressedIndex = colorGradeMaps[color];
+            resetColorByIndex(pressedIndex);
+        })
     }
 
 
