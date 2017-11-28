@@ -99,8 +99,11 @@
             }
         });
         $('.owl-item.active').on('click',function(event){
+            console.log('in click of active element in carousel...');
+            e.stopPropagation();
             var $this = $(this);
             var color = $this.children().children().first()[0].innerText;
+            console.log('found color ' + color);
             var pressedIndex = colorGradeMaps[color];
             resetColorByIndex(pressedIndex);
         })
