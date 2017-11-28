@@ -40,6 +40,18 @@
         resetColorByIndex(index);
 
     }
+    function addColorClick(){
+
+        $('.owl-carousel').on('click', '.item', function () {
+            console.log('in click of active element in carousel...');
+            var $this = $(this);
+            var color = $this.children().first()[0].innerText;
+            var index = colorGradeMaps[color];
+            resetColorByIndex(index);
+
+
+        });
+    }
     function initColorView(pageCodes){
 
         var stone= null;
@@ -98,6 +110,7 @@
                     break;
             }
         });
+        addColorClick();
 
     }
 
