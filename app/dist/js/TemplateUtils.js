@@ -14,6 +14,7 @@
 		debounce: debounce,
 		processUrl: processUrl,
 		loadCSS: loadCSS,
+		loadScript: loadScript,
 		sortArrayByObjectKey: sortArrayByObjectKey,
 		capitalizeFirst: capitalizeFirst,
 		getParameter: getParameter,
