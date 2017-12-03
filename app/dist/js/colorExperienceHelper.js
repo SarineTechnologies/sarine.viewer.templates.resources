@@ -29,7 +29,7 @@
     }
     function resetColorByIndex(index){
 
-        if(index ==0  || index == Object.keys(colorGradeMaps).length )
+        if(index ==0  || index > Object.keys(colorGradeMaps).length )
             return ;
         $('.owl-carousel').trigger('to.owl.carousel',index-1)
     }
