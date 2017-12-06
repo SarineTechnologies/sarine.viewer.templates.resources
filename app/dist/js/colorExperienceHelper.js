@@ -70,7 +70,7 @@
             var imageWithLetter = experience.ImagePatternLetter || "sprite-with-letters_*.png";
             var filePrefix = imageWithLetter.replace(/\*.[^/.]+$/,'');
             var fileExt    = "."+imageWithLetter.split('.').pop();
-            if(colorGradeMaps.hasOwnProperty(color))
+            if(!colorGradeMaps.hasOwnProperty(color))
                 return false;
             var imageIndex = colorGradeMaps[color];
             var filePath = document.viewersList[pageCodes.colorExperience];
