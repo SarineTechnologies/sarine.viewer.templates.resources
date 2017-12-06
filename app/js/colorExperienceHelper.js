@@ -86,6 +86,7 @@
 
             });
             selector.trigger('click');
+            return true;
         }
     }
     function getCurrentColorIndex(){
