@@ -51,6 +51,11 @@
 
 
         });
+        $('.owl-carousel').on('initialize.owl.carousel'),function(){
+
+            $('.color-image').trigger('click');
+        }
+
     }
     function initColorView(pageCodes){
 
