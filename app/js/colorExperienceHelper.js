@@ -77,6 +77,7 @@
             var imagePath = filePath + filePrefix +imageIndex  + fileExt ;
             selector.attr('src', imagePath);
             selector.attr('index',imageIndex);
+            selector.attr('style' ,'cursor:pointer');
 
             selector.on('click', function(e){ // ' .color-image'
 
