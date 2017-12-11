@@ -98,8 +98,6 @@
     function colorArrowsEvent(){
 
         addColorClick();
-        $('.color-image').trigger('click');
-
     }
 
 
