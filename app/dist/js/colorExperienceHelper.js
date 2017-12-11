@@ -51,7 +51,7 @@
 
 
         });
-        $('.owl-carousel').on('initialize.owl.carousel'),function(){
+        $('.owl-carousel').on('initialized.owl.carousel'),function(){
 
             $('.color-image').trigger('click');
         }
