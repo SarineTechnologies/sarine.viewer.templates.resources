@@ -86,7 +86,6 @@
                 e.stopPropagation();
 
             });
-            selector.trigger('click');
             return true;
         }
     }
@@ -98,23 +97,8 @@
     }
     function colorArrowsEvent(){
 
-        var attrName = 'data-name';
-        $('.color-nav').on('click', '.unit', function (e) {
-
-            var $el = $(this),
-                attrVal = $el.attr(attrName);
-            e.stopPropagation();
-
-            switch(attrVal){
-                case 'left':
-                    resetColorByIndex(getCurrentColorIndex()-1);
-                    break;
-                case 'right':
-                    resetColorByIndex(getCurrentColorIndex()+1);
-                    break;
-            }
-        });
         addColorClick();
+        $('.color-image').trigger('click');
 
     }
 
