@@ -10,7 +10,7 @@
     var _availLangs = window.availableLanguages,
         _toElement = undefined,
         _selected = undefined,
-        _curLang = getCookie('lang') || configuration.selectedLanguage || "en-US",
+        _curLang = null,
         _cookieLife = 365, //days
         _svgHeight = 28, 
         _svgWidth = 28
@@ -27,6 +27,9 @@
             _toElement = toElement;
             if (svgHeight) _svgHeight = parseInt(svgHeight); 
             if (svgWidth) _svgWidth = parseInt(svgWidth);
+
+            var defaultLanguage = getDefaultLanguage(_availLangs);
+            _curLang = getCookie('lang') || defaultLanguage || "en-US",
 
             window.tplUtils.loadCSS(coreDomain + 'content/viewers/atomic/v1/assets/jquery.selectric/jquery.selectric.sarine.css?' + cacheSuperVersion);
             window.tplUtils.loadScript(coreDomain + 'content/viewers/atomic/v1/assets/jquery.selectric/jquery.selectric.min.js?' + cacheSuperVersion,
@@ -102,4 +105,16 @@
         location.reload();    
     }
 
+    function getDefaultLanguage(languages) {
+        for (var langCode in languages) {
+            if (languages.hasOwnProperty(langCode)) {
+              var lang = languages[langCode];
+              if (lang.isDefault) {
+                return langCode;
+              }
+            }
+        }
+
+        return null;
+    }
 })(window, window.document, window.jQuery);
