@@ -28,8 +28,8 @@
             if (svgHeight) _svgHeight = parseInt(svgHeight); 
             if (svgWidth) _svgWidth = parseInt(svgWidth);
 
-            window.tplUtils.loadCSS('/content/viewers/atomic/v1/assets/jquery.selectric/jquery.selectric.sarine.css?' + cacheSuperVersion);
-            window.tplUtils.loadScript('/content/viewers/atomic/v1/assets/jquery.selectric/jquery.selectric.min.js?' + cacheSuperVersion,
+            window.tplUtils.loadCSS(coreDomain + 'content/viewers/atomic/v1/assets/jquery.selectric/jquery.selectric.sarine.css?' + cacheSuperVersion);
+            window.tplUtils.loadScript(coreDomain + 'content/viewers/atomic/v1/assets/jquery.selectric/jquery.selectric.min.js?' + cacheSuperVersion,
                 
                 renderSelector,
             
