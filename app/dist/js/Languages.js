@@ -28,8 +28,8 @@
             if (svgHeight) _svgHeight = parseInt(svgHeight); 
             if (svgWidth) _svgWidth = parseInt(svgWidth);
 
-            var defaultLanguage = getDefaultLanguage(_availLangs);
-            _curLang = getCookie('lang') || defaultLanguage || "en-US",
+            //Get the default language to display
+            _curLang = getDefaultLanguage(_availLangs);
 
             window.tplUtils.loadCSS(coreDomain + 'content/viewers/atomic/v1/assets/jquery.selectric/jquery.selectric.sarine.css?' + cacheSuperVersion);
             window.tplUtils.loadScript(coreDomain + 'content/viewers/atomic/v1/assets/jquery.selectric/jquery.selectric.min.js?' + cacheSuperVersion,
@@ -106,15 +106,23 @@
     }
 
     function getDefaultLanguage(languages) {
+        var lang =  getCookie('lang');
+
+        //If language in cookie and exist in the template - show it
+        if (typeof(languages[lang]) != 'undefined')
+            return lang;
+
+        //Not in cookie - find the language that is set to default
         for (var langCode in languages) {
             if (languages.hasOwnProperty(langCode)) {
-              var lang = languages[langCode];
-              if (lang.isDefault) {
+              var langData = languages[langCode];
+              if (langData.isDefault) {
                 return langCode;
               }
             }
         }
 
-        return null;
+        //No valid default language was found, return english as default.
+        return "en-US";
     }
 })(window, window.document, window.jQuery);
