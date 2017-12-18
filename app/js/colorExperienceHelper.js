@@ -46,15 +46,17 @@
             console.log('in click of active element in carousel...');
             var $this = $(this);
             var color = $this.children().first()[0].innerText;
+            if(color.indexOf('-')>0)
+            {
+                var splited = color.split('-');
+                color = splited[0] + splited[1];
+            }
             var index = colorGradeMaps[color];
             resetColorByIndex(index);
 
 
         });
-        $('.owl-carousel').on('initialized.owl.carousel'),function(){
 
-            $('.color-image').trigger('click');
-        }
 
     }
     function initColorView(pageCodes){
