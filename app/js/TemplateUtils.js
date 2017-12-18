@@ -378,3 +378,15 @@
 	}	
 
 })(window, window.document, window.jQuery);
+
+// goTo() plugin
+// jump to some element without using # in url
+// e.g.: $('#id').goTo();
+(function($) {
+	$.fn.goTo = function() {
+		$('html, body').animate({
+			scrollTop: $(this).offset().top + 'px'
+		}, 'fast');
+		return this;
+	}
+})(jQuery);

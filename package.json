@@ -1,7 +1,9 @@
 {
   "name": "sarine.viewer.templates.resources",
   "title": "common resources for viewer templates",
-  "version": "1.26.93",
+
+  "version": "1.26.95",
+
 
   "description": "common resources for viewer templates",
   "main": "index.js",

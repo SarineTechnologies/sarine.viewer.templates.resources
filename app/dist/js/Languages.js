@@ -10,7 +10,7 @@
     var _availLangs = window.availableLanguages,
         _toElement = undefined,
         _selected = undefined,
-        _curLang = getCookie('lang') || configuration.selectedLanguage || "en-US",
+        _curLang = null,
         _cookieLife = 365, //days
         _svgHeight = 28, 
         _svgWidth = 28
@@ -27,6 +27,9 @@
             _toElement = toElement;
             if (svgHeight) _svgHeight = parseInt(svgHeight); 
             if (svgWidth) _svgWidth = parseInt(svgWidth);
+
+            //Get the default language to display
+            _curLang = getDefaultLanguage(_availLangs);
 
             window.tplUtils.loadCSS(coreDomain + 'content/viewers/atomic/v1/assets/jquery.selectric/jquery.selectric.sarine.css?' + cacheSuperVersion);
             window.tplUtils.loadScript(coreDomain + 'content/viewers/atomic/v1/assets/jquery.selectric/jquery.selectric.min.js?' + cacheSuperVersion,
@@ -102,4 +105,24 @@
         location.reload();    
     }
 
+    function getDefaultLanguage(languages) {
+        var lang =  getCookie('lang');
+
+        //If language in cookie and exist in the template - show it
+        if (typeof(languages[lang]) != 'undefined')
+            return lang;
+
+        //Not in cookie - find the language that is set to default
+        for (var langCode in languages) {
+            if (languages.hasOwnProperty(langCode)) {
+              var langData = languages[langCode];
+              if (langData.isDefault) {
+                return langCode;
+              }
+            }
+        }
+
+        //No valid default language was found, return english as default.
+        return "en-US";
+    }
 })(window, window.document, window.jQuery);
