@@ -69,7 +69,8 @@
         
         selector
             .selectric({
-                nativeOnMobile: true,
+                nativeOnMobile: false,
+                disableOnMobile: false,
                 onInit: function () {
                     if (Device.isOnlyMobile()) {
                         $('.selectric-items', elId).addClass('selectric-mobile');
