@@ -67,10 +67,9 @@
         // Set "selectric" and bind to 'change' event
         var selector = $('select', elId);
         
-        selector
+        selector   
             .selectric({
-                nativeOnMobile: false,
-                disableOnMobile: false,
+                nativeOnMobile: true,
                 onInit: function () {
                     if (Device.isOnlyMobile()) {
                         $('.selectric-items', elId).addClass('selectric-mobile');
@@ -87,6 +86,7 @@
             })
             .on('selectric-close', function(event, element, selectric) {
                 $(elId + '.sarine-selectric-wrapper .icon').css('z-index', 0);
+                $(elId + '.sarine-selectric-wrapper').removeClass('selectric-hover');
             })
             .on('change', function() {
                 _selected = $(this).val();
