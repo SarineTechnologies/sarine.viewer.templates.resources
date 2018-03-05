@@ -66,7 +66,7 @@
             stone = window.stones[0];
         if(!stone)
             return ;
-        var color =  (colorProperty =='srnColor ') ? stone.stoneProperties.srnColor : stone.stoneProperties.color;
+        var color =  (colorProperty =='srnColor') ? stone.stoneProperties.srnColor : stone.stoneProperties.color;
 
         var selector = $('.color-container img');//.children('img');
         if(selector.length> 0 ){
