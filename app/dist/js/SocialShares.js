@@ -1,4 +1,29 @@
 (function (window, document, $) {
+
+
+    var socialShares = {
+        overrideAddThisShareProperties: overrideAddThisShareProperties
+    };
+    function overrideAddThisShareProperties(){
+
+        if(window.addthis_share!=undefined && window.addthis_share != null) {
+
+
+            var socialMediaTitleOverride = window.socialMediaTitleOverride;
+            var socialMediaImageOverRide = window.socialMediaImageOverRide;
+
+            if (socialMediaImageOverRide != undefined && socialMediaImageOverRide != null && socialMediaImageOverRide !== '') {
+
+                window.addthis_share.media = socialMediaImageOverRide;
+            }
+            if (socialMediaTitleOverride != undefined && socialMediaTitleOverride != null && socialMediaTitleOverride !== '') {
+
+                window.addthis_share.title = socialMediaTitleOverride;
+            }
+        }
+    }
+
+    window.socialShares = socialShares;
     $(function () {
         'use strict';
         
@@ -92,7 +117,7 @@
             }
             console.log('Query variable %s not found', varName);
         }
-        
+
         function startShareThisApp() {
             window.switchTo5x = true;
             $.getScript('https://ws.sharethis.com/button/buttons.js')
@@ -114,6 +139,7 @@
                         console.log(errorThrown);
                     });
         }
+
 
         // show/hide social block for mobile devices
         try {
